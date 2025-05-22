@@ -32,17 +32,17 @@ namespace InventoryLINQtoXML
             this.lblInventory = new System.Windows.Forms.Label();
             this.txtInventory = new System.Windows.Forms.TextBox();
             this.grbAdd = new System.Windows.Forms.GroupBox();
-            this.lblMake = new System.Windows.Forms.Label();
-            this.txtMake = new System.Windows.Forms.TextBox();
-            this.txtColor = new System.Windows.Forms.TextBox();
-            this.lblColor = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtPetName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.txtMake = new System.Windows.Forms.TextBox();
+            this.lblMake = new System.Windows.Forms.Label();
             this.grbLookup = new System.Windows.Forms.GroupBox();
+            this.btnLookUp = new System.Windows.Forms.Button();
             this.txtMakeLookup = new System.Windows.Forms.TextBox();
             this.lblMakeLookup = new System.Windows.Forms.Label();
-            this.btnLookUp = new System.Windows.Forms.Button();
             this.grbAdd.SuspendLayout();
             this.grbLookup.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,7 @@ namespace InventoryLINQtoXML
             this.txtInventory.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtInventory.Size = new System.Drawing.Size(300, 406);
             this.txtInventory.TabIndex = 1;
+            this.txtInventory.TabStop = false;
             // 
             // grbAdd
             // 
@@ -86,37 +87,15 @@ namespace InventoryLINQtoXML
             this.grbAdd.TabStop = false;
             this.grbAdd.Text = "Add Inventory Item";
             // 
-            // lblMake
+            // btnAdd
             // 
-            this.lblMake.AutoSize = true;
-            this.lblMake.Location = new System.Drawing.Point(6, 43);
-            this.lblMake.Name = "lblMake";
-            this.lblMake.Size = new System.Drawing.Size(45, 20);
-            this.lblMake.TabIndex = 0;
-            this.lblMake.Text = "Make";
-            // 
-            // txtMake
-            // 
-            this.txtMake.Location = new System.Drawing.Point(89, 43);
-            this.txtMake.Name = "txtMake";
-            this.txtMake.Size = new System.Drawing.Size(360, 27);
-            this.txtMake.TabIndex = 1;
-            // 
-            // txtColor
-            // 
-            this.txtColor.Location = new System.Drawing.Point(89, 88);
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(360, 27);
-            this.txtColor.TabIndex = 3;
-            // 
-            // lblColor
-            // 
-            this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(6, 88);
-            this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(45, 20);
-            this.lblColor.TabIndex = 2;
-            this.lblColor.Text = "Color";
+            this.btnAdd.Location = new System.Drawing.Point(261, 182);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(188, 29);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPetName
             // 
@@ -134,14 +113,37 @@ namespace InventoryLINQtoXML
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Pet Name";
             // 
-            // btnAdd
+            // txtColor
             // 
-            this.btnAdd.Location = new System.Drawing.Point(261, 182);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(188, 29);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.txtColor.Location = new System.Drawing.Point(89, 88);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(360, 27);
+            this.txtColor.TabIndex = 3;
+            // 
+            // lblColor
+            // 
+            this.lblColor.AutoSize = true;
+            this.lblColor.Location = new System.Drawing.Point(6, 88);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(45, 20);
+            this.lblColor.TabIndex = 2;
+            this.lblColor.Text = "Color";
+            // 
+            // txtMake
+            // 
+            this.txtMake.Location = new System.Drawing.Point(89, 43);
+            this.txtMake.Name = "txtMake";
+            this.txtMake.Size = new System.Drawing.Size(360, 27);
+            this.txtMake.TabIndex = 1;
+            // 
+            // lblMake
+            // 
+            this.lblMake.AutoSize = true;
+            this.lblMake.Location = new System.Drawing.Point(6, 43);
+            this.lblMake.Name = "lblMake";
+            this.lblMake.Size = new System.Drawing.Size(45, 20);
+            this.lblMake.TabIndex = 0;
+            this.lblMake.Text = "Make";
             // 
             // grbLookup
             // 
@@ -155,6 +157,16 @@ namespace InventoryLINQtoXML
             this.grbLookup.TabIndex = 3;
             this.grbLookup.TabStop = false;
             this.grbLookup.Text = "Look up Colors for Make";
+            // 
+            // btnLookUp
+            // 
+            this.btnLookUp.Location = new System.Drawing.Point(261, 91);
+            this.btnLookUp.Name = "btnLookUp";
+            this.btnLookUp.Size = new System.Drawing.Size(188, 29);
+            this.btnLookUp.TabIndex = 4;
+            this.btnLookUp.Text = "Look up Colors";
+            this.btnLookUp.UseVisualStyleBackColor = true;
+            this.btnLookUp.Click += new System.EventHandler(this.btnLookUp_Click);
             // 
             // txtMakeLookup
             // 
@@ -172,15 +184,6 @@ namespace InventoryLINQtoXML
             this.lblMakeLookup.TabIndex = 2;
             this.lblMakeLookup.Text = "Make to Look up";
             // 
-            // btnLookUp
-            // 
-            this.btnLookUp.Location = new System.Drawing.Point(261, 91);
-            this.btnLookUp.Name = "btnLookUp";
-            this.btnLookUp.Size = new System.Drawing.Size(188, 29);
-            this.btnLookUp.TabIndex = 4;
-            this.btnLookUp.Text = "Look up Colors";
-            this.btnLookUp.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -192,6 +195,7 @@ namespace InventoryLINQtoXML
             this.Controls.Add(this.lblInventory);
             this.Name = "MainForm";
             this.Text = "Inventory LINQ to XML";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.grbAdd.ResumeLayout(false);
             this.grbAdd.PerformLayout();
             this.grbLookup.ResumeLayout(false);
